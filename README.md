@@ -8,4 +8,7 @@ snort -V // check for version
 etc folder has all configurations
 local.rules will have all custom rules
 
-set ipvar HOME_NET_ any to 192.168.0.0/16
+test local.rules:
+alert icmp any any -> any any (msg:"Test ICMP Alert"; sid:1000001;)
+alert udp any any -> any any (msg:"Test UDP Alert"; sid:1000002;)
+alert tcp any any -> any any (msg:"Test TCP Alert"; sid:1000003;)
